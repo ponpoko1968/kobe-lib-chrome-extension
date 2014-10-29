@@ -29,6 +29,9 @@ $(
 		    load_reservation_status(kobe_id,function(status){
 			$($(x).children()[1]).after("<td>"+status+"</td>");
 		    });
+		    console.log(kobe_id);
+		    var detail_url = "/opac/opacs/find_detailbook?kobeid="+ kobe_id + "&mode=one_line&pvolid="+ kobe_id +"&type=CtlgBook";
+		    $($(x).children()[0]).after("<a href=\""+ detail_url +"\">"+ $($(x).children()[1]).text() + "</a>");
 		    // $.ajax({
 		    // 	url: "/opac/opacs/find_detailbook?kobeid="+kobe_id+"&pvolid="+kobe_id+"&type=CtlgBook",
 		    // 	success: function(res){
